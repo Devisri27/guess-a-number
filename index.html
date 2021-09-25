@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess a number</title>
+    <style>
+body{
+    background-color: pink;
+    text-align: center;
+    margin:100px;
+    font-size:x-large;
+}
+
+input,button{
+    
+    text-align: center;
+    font-size:x-large;
+    border-radius: 20px;
+}
+
+</style>
+</head>
+<body>
+    <p>Guess a number between 1 to 100!</p>
+    <input id="in" type="number">
+    <button onclick="findNumber()">CHECK</button>
+    <p id="out">RESULT</p>
+
+<script>
+      var guess= Math.floor(Math.random()*100) +1
+      function findNumber()
+      {
+
+        if(document.getElementById('in').value=='')
+        {
+            document.getElementById('out').innerHTML="Enter a Valid Number"
+            return
+        }
+      var num=parseInt(document.getElementById('in').value)
+      if(num===guess)
+      document.getElementById('out').innerHTML="Congrats,Got It Correctly."
+      else if(num>guess)
+      document.getElementById('out').innerHTML="Guess a Small Number."
+      else
+        document.getElementById('out').innerHTML="Guess a Greater Number."
+        if(num>100||num<1){
+
+       
+        document.getElementById('out').innerHTML="Out of Range"
+         return
+        }
+
+
+
+
+      }
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
